@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قرية اللوتس بسوهاج | Lotus Village Sohag</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <!-- FontAwesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  
+  <!-- Custom CSS -->
+  <style>
+    /* إعداد الخلفية العامة */
+    body {
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('assets/images/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    /* ترويسة الموقع ثابتة */
+    header {
+      background-color: rgba(232, 69, 69, 0.95);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-brand img {
+      max-height: 60px;
+    }
+    .nav-link {
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: #ffd700;
+    }
+    .btn-lang {
+      margin: 0 5px;
+    }
+    /* قسم الهيرو مع خلفية داكنة داخلية لتحسين وضوح النص */
+    #hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    /* حاوية النص داخل الهيرو */
+    .hero-content {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    #hero h1 {
+      font-size: 3.5rem;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+    #hero p {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+    /* أزرار الهيرو */
+    .hero-buttons {
+      margin-top: 30px;
+    }
+    .hero-buttons .btn {
+      margin: 0 10px;
+      font-size: 1rem;
+    }
+    /* الأقسام التالية تحتوي على طبقة شفافة لتقليل تشتيت الخلفية */
+    .section-overlay {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 60px 0;
+    }
+    .section-title {
+      color: #e84545;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    /* الكاروسيل مع تأثير إطار وحركة لطيفة */
+    .carousel-item {
+      transition: transform 0.8s ease-in-out;
+      border: 5px solid rgba(232, 69, 69, 0.7);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .carousel-item img {
+      object-fit: cover;
+      height: 450px;
+      width: 100%;
+      transition: transform 0.8s ease-in-out;
+    }
+    .carousel-item.active img {
+      transform: scale(1.05);
+    }
+    /* زر واتساب ثابت */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      z-index: 1001;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+    }
+    /* Footer */
+    footer {
+      background-color: rgba(232, 69, 69, 0.95);
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    /* أيقونات التواصل الاجتماعي */
+    .social-icons a {
+      color: #e84545;
+      font-size: 20px;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- زر واتساب ثابت -->
+  <a class="whatsapp-btn" href="https://wa.me/201111396604?text=مرحباً، أود الاستفسار عن قرية اللوتس بسوهاج" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <!-- Header & Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg container">
+      <a class="navbar-brand" href="#hero">
+        <img src="assets/images/logo.png" alt="Logo" />
+        <span class="ms-2">قرية اللوتس بسوهاج</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#hero">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">معرض الصور</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">تواصل معنا</a></li>
+        </ul>
+        <div class="d-flex ms-3">
+          <button class="btn btn-outline-light btn-sm btn-lang" onclick="switchLang('ar')">عربي</button>
+          <button class="btn btn-outline-light btn-sm btn-lang" onclick="switchLang('en')">EN</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- المحتوى العربي -->
+  <main id="content-ar">
+    <!-- قسم الهيرو: الصفحة الرئيسية -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-content" data-aos="fade-down">
+          <h1>قرية اللوتس بسوهاج</h1>
+          <p>
+            واحتنا الفريدة التي تجمع بين الترفيه العصري، الأجواء العائلية الدافئة، وأفضل المأكولات والمشروبات بأقل الأسعار.
+          </p>
+          <!-- أزرار تحت النص -->
+          <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+            <a href="#gallery" class="btn btn-danger">استكشف الصور</a>
+            <a href="#contact" class="btn btn-outline-light">احجز الآن</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- قسم معرض الصور -->
+    <section id="gallery" class="section-overlay" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title text-center">معرض الصور</h2>
+        <div id="lotusCarouselAr" class="carousel slide mt-4" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#lotusCarouselAr" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#lotusCarouselAr" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#lotusCarouselAr" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#lotusCarouselAr" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#lotusCarouselAr" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#lotusCarouselAr" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#lotusCarouselAr" data-bs-slide-to="6"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/images/1.jpg" alt="صورة 1">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/2.jpg" alt="صورة 2">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/3.jpg" alt="صورة 3">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/4.jpg" alt="صورة 4">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/5.jpg" alt="صورة 5">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/6.jpg" alt="صورة 6">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/7.jpg" alt="صورة 7">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#lotusCarouselAr" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">السابق</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#lotusCarouselAr" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">التالي</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- قسم من نحن -->
+    <section id="about" class="section-overlay" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title text-center">من نحن</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <p class="lead text-center">
+              نُقدم تجربة ترفيهية متكاملة تجمع بين الحداثة والتراث في قلب سوهاج. رؤيتنا أن نصبح الوجهة الأولى للعائلات والأفراد الباحثين عن الاسترخاء، المتعة والمذاق الرفيع. نحن ملتزمون بتوفير بيئة آمنة وإبداعية مع خدمات راقية تضاهي أفضل المقامات العالمية.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- قسم معلومات الاتصال -->
+    <section id="contact-info" class="section-overlay" data-aos="fade-up">
+      <div class="container text-center">
+        <h2 class="section-title">معلومات الاتصال</h2>
+        <p>
+          <strong>العنوان:</strong> سوهاج – الشرق، أمام مديرية الأمن، بجوار متحف سوهاج، أسفل فندق النيل
+        </p>
+        <p>
+          <strong>الهاتف:</strong> 01111396604
+        </p>
+      </div>
+    </section>
+    
+    <!-- قسم تواصل معنا -->
+    <section id="contact" class="section-overlay" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title text-center">تواصل معنا</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">الاسم</label>
+                <input type="text" class="form-control" id="name" placeholder="أدخل اسمك" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">البريد الإلكتروني</label>
+                <input type="email" class="form-control" id="email" placeholder="example@mail.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">رسالتك</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="اكتب رسالتك هنا" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-danger w-100">إرسال الرسالة</button>
+            </form>
+          </div>
+        </div>
+        <!-- روابط وسائل التواصل الاجتماعي -->
+        <div class="social-icons text-center mt-4">
+          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- المحتوى الإنجليزي -->
+  <main id="content-en" class="d-none">
+    <!-- English Version -->
+    <!-- Hero Section -->
+    <section id="hero-en">
+      <div class="container">
+        <div class="hero-content" data-aos="fade-down">
+          <h1>Lotus Village – Sohag</h1>
+          <p>
+            Our unique destination combines modern leisure, warm family vibes, and exceptional cuisine at unbeatable prices.
+          </p>
+          <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+            <a href="#gallery-en" class="btn btn-danger">View Gallery</a>
+            <a href="#contact-en" class="btn btn-outline-light">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery-en" class="section-overlay" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title text-center">Gallery</h2>
+        <div id="lotusCarouselEn" class="carousel slide mt-4" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#lotusCarouselEn" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#lotusCarouselEn" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#lotusCarouselEn" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#lotusCarouselEn" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#lotusCarouselEn" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#lotusCarouselEn" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#lotusCarouselEn" data-bs-slide-to="6"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/images/1.jpg" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/2.jpg" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/3.jpg" alt="Image 3">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/4.jpg" alt="Image 4">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/5.jpg" alt="Image 5">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/6.jpg" alt="Image 6">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/7.jpg" alt="Image 7">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#lotusCarouselEn" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#lotusCarouselEn" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about-en" class="section-overlay" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title text-center">About Us</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <p class="lead text-center">
+              We offer a comprehensive leisure experience that blends modern entertainment with tradition in the heart of Sohag. Our vision is to become the premier destination for families and individuals seeking relaxation, fun, and gourmet dining. We are committed to providing a safe, creative, and premium service experience that rivals the best in the world.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Info Section -->
+    <section id="contact-info-en" class="section-overlay" data-aos="fade-up">
+      <div class="container text-center">
+        <h2 class="section-title">Contact Information</h2>
+        <p>
+          <strong>Address:</strong> Sohag – East, in front of the Security Directorate, next to Sohag Museum, under the Nile Hotel
+        </p>
+        <p>
+          <strong>Phone:</strong> 01111396604
+        </p>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact-en" class="section-overlay" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title text-center">Contact Us</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form>
+              <div class="mb-3">
+                <label for="nameEn" class="form-label">Name</label>
+                <input type="text" class="form-control" id="nameEn" placeholder="Enter your name" required>
+              </div>
+              <div class="mb-3">
+                <label for="emailEn" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emailEn" placeholder="example@mail.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="messageEn" class="form-label">Message</label>
+                <textarea class="form-control" id="messageEn" rows="4" placeholder="Write your message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-danger w-100">Send Message</button>
+            </form>
+          </div>
+        </div>
+        <div class="social-icons text-center mt-4">
+          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 قرية اللوتس بسوهاج - جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+  
+  <!-- JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+    
+    function switchLang(lang) {
+      const arContent = document.getElementById('content-ar');
+      const enContent = document.getElementById('content-en');
+      
+      if (lang === 'ar') {
+        document.documentElement.setAttribute('lang', 'ar');
+        document.documentElement.setAttribute('dir', 'rtl');
+        arContent.classList.remove('d-none');
+        enContent.classList.add('d-none');
+      } else {
+        document.documentElement.setAttribute('lang', 'en');
+        document.documentElement.setAttribute('dir', 'ltr');
+        arContent.classList.add('d-none');
+        enContent.classList.remove('d-none');
+      }
+    }
+  </script>
+</body>
+</html>
